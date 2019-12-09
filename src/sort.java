@@ -144,14 +144,14 @@ class sort {
         // X = []
         List<Integer> x = new ArrayList<Integer>();
 
-        // X' = [] + 1 = []
+        // X' = [∅ + 1] = [∅]
         //implicit assumption that empty element + 1 is the empty element
         List<Integer> xPrime = new ArrayList<Integer>(x);
 
 
         // See if X' == X + 1
         assertIterableEquals(
-                x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList::new)),
+                x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Integer>::new)),
                 xPrime);
 
         //Implicit assumption the z = Collections.sort(x) due to inplace operations
@@ -161,7 +161,7 @@ class sort {
 
         // See if Z' == Z + 1 now holds
         assertIterableEquals(
-                x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList::new)),
+                x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Integer>::new)),
                 xPrime);
 
     }
@@ -194,29 +194,25 @@ class sort {
      * */
     @Test
     void metaTwoCategoryTwo(){
-//        List<String> x = new ArrayList<String>();
-//        x.add("aaaaaaaaaa");
-//
-//        //implicit assumption that empty element + 1 is the empty element
-//        List<String> xPrime = new ArrayList<String>(x);
-//        for(int i = 0; i < xPrime.size(); i++)
-//            xPrime.set(i, xPrime.get(i) + "a");
-//
-//        System.out.println(xPrime);
-//
-//        // Map x to x + 1
-//        assertIterableEquals(
-//                x.stream().map(el -> el + "a" ).collect(Collectors.toCollection(ArrayList::new)),
-//                xPrime);
-//
-//        Collections.sort(x);
-//        Collections.sort(xPrime);
-//
-//        // Map z to z + 1
-//        assertIterableEquals(
-//                x.stream().map(el -> el + "a" ).collect(Collectors.toCollection(ArrayList::new)),
-//                xPrime);
+    /*
+        // X = ["aaaaaaaaaa"]
+        List<String> x = new ArrayList<String>();
+        x.add("aaaaaaaaaa");
 
+        // X' = ["aaaaaaaaaa" + "a"]
+        List<String> xPrime = x.stream().map(el -> el + "a" ).collect(Collectors.toCollection(ArrayList<String>::new));
+
+        System.out.println(xPrime);
+
+        // See if X' == X + "a"
+        assertIterableEquals(x.stream().map(el -> el + "a" ).collect(Collectors.toCollection(ArrayList<String>::new)), xPrime);
+
+        Collections.sort(x);
+        Collections.sort(xPrime);
+
+        // See if Z' == Z + "a"
+        assertIterableEquals(x.stream().map(el -> el + "a" ).collect(Collectors.toCollection(ArrayList<String>::new)), xPrime);
+    */
     }
 
     /*
@@ -237,7 +233,6 @@ class sort {
      *  Therefore: z’ == z + 1
      *
      *
-     *
      * */
     @Test
     void metaTwoCategoryThree(){
@@ -247,13 +242,11 @@ class sort {
         for(int i = 0; i <10; i++)
             x.add(1.0);
         // X' = [1.0 + 1, 1.0 + 1, ..., 1.0 + 1]
-        List<Double> xPrime = new ArrayList<Double>(x);
-        for(int i = 0; i <xPrime.size(); i++)
-            xPrime.set(i, xPrime.get(i) + 1);
+        List<Double> xPrime = x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Double>::new));
 
 
         // See if X' == X + 1
-        assertIterableEquals(x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList::new)), xPrime);
+        assertIterableEquals(x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Double>::new)), xPrime);
 
         //Implicit assumption the z = Collections.sort(x) due to inplace operations
         Collections.sort(x);
@@ -261,10 +254,7 @@ class sort {
         Collections.sort(xPrime);
 
         // See if Z' == Z + 1 now holds
-        assertIterableEquals(x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList::new)), xPrime);
+        assertIterableEquals(x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Double>::new)), xPrime);
 
     }
-
-
-
 }
