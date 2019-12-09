@@ -83,9 +83,9 @@ class rotate {
 
         Random rn = new Random();
 
-        for(int c = 0; c < 1000; c++) {
+        for(int c = 0; c < 2; c++) {
 
-            int num = rn.nextInt(100000) + 100;
+            int num = rn.nextInt(10000);
             int d = rn.nextInt();
 
             List<Character> x = new LinkedList<Character>();
@@ -109,18 +109,7 @@ class rotate {
     }
 
 
-    /*
-     *
-     *  x'0, x'1, ..., x'n = x0 + 1, x1 + 1, ..., xn + 1
-     *  Therefore:
-     *
-     *  z'0, z'1, ..., z'n = z0 + 1, z1 + 1, ..., zn + 1
-     *
-     *
-     *  NOTE: This doesnt work on Category 2 due to it using type string
-     *
-     *
-     * */
+
 
     @Test
     void metaTwoCategoryOne(){

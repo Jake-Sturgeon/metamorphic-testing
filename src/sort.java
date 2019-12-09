@@ -207,7 +207,9 @@ class sort {
         // See if X' == X + "a"
         assertIterableEquals(x.stream().map(el -> el + "a" ).collect(Collectors.toCollection(ArrayList<String>::new)), xPrime);
 
+        //Implicit assumption the z = Collections.sort(x) due to inplace operations
         Collections.sort(x);
+        //Implicit assumption the z' = Collections.sort(x') due to inplace operations
         Collections.sort(xPrime);
 
         // See if Z' == Z + "a"
