@@ -10,9 +10,16 @@ class min {
     /*
     *
     *
-    *  Therefore:
+    *  Category: 10, 31, 33
     *
+    *  x'0, x'1, ..., x'n = x0 + 1, x1 + 1, ..., xn + 1
+    *  => X' = X + 1
     *
+    *  Where:
+    *  z'0, z'1, ..., z'n = z0 + 1, z1 + 1, ..., zn + 1
+    *  => Z' = Z + 1
+    *
+    *  Therefore: z’ == z + 1
     *
     * */
 
@@ -37,6 +44,21 @@ class min {
 
     }
 
+    /*
+     *
+     *
+     *  Category: 27, 33, 35
+     *
+     *  x'0, x'1, ..., x'n = x0 + 1, x1 + 1, ..., xn + 1
+     *  => X' = X + 1
+     *
+     *  Where:
+     *  z'0, z'1, ..., z'n = z0 + 1, z1 + 1, ..., zn + 1
+     *  => Z' = Z + 1
+     *
+     *  Therefore: z’ == z + 1
+     *
+     * */
     @Test
     void metaOneCategoryTwo(){
 
@@ -59,6 +81,21 @@ class min {
 
     }
 
+    /*
+     *
+     *
+     *  Category: 29, 32, 36
+     *
+     *  x'0, x'1, ..., x'n = x0 + 1, x1 + 1, ..., xn + 1
+     *  => X' = X + 1
+     *
+     *  Where:
+     *  z'0, z'1, ..., z'n = z0 + 1, z1 + 1, ..., zn + 1
+     *  => Z' = Z + 1
+     *
+     *  Therefore: z’ == z + 1
+     *
+     * */
     @Test
     void metaOneCategoryThree(){
 
@@ -83,6 +120,21 @@ class min {
 
     }
 
+    /*
+     *  ====== Automated Test ======
+     *
+     *  Category: 29, 32, 36
+     *
+     *  x'0, x'1, ..., x'n = x0 + N, x + N, ..., xn + N
+     *  => X' = X + N
+     *
+     *  Where:
+     *  z'0, z'1, ..., z'n = z0 + N, z1 + N, ..., zn + N
+     *  => Z' = Z + N
+     *
+     *  Therefore: z’ == z + N
+     *
+     * */
     @Test
     void metaOneCategoryThreeAutomated(){
 
@@ -122,7 +174,17 @@ class min {
     /*
      *
      *
+     *  Category: 10, 31, 33
      *
+     *  x'0, x'1, ..., x'n = -x0, -x1, ..., -xn
+     *
+     *  => X' = max(-X)    -->     assumption that max returns a collection of largest value in the collection
+     *                     -->     e.g. X' = max(-[1,2,3]) = [-1]
+     *  Where:
+     *  z'0, z'1, ..., z'n = -z0, -z1, ..., -zn
+     *  => Z' = -Z
+     *
+     *  Therefore: z’ == -z
      *
      * */
 
@@ -145,6 +207,22 @@ class min {
 
     }
 
+    /*
+     *
+     *
+     *  Category: 27, 33, 35
+     *
+     *  x'0, x'1, ..., x'n = -x0, -x1, ..., -xn
+     *
+     *  => X' = max(-X)    -->     assumption that max returns a collection of largest value in the collection
+     *                     -->     e.g. X' = max(-[1,2,3]) = [-1]
+     *  Where:
+     *  z'0, z'1, ..., z'n = -z0, -z1, ..., -zn
+     *  => Z' = -Z
+     *
+     *  Therefore: z’ == -z
+     *
+     * */
     @Test
     void metaTwoCategoryTwo(){
 
@@ -167,6 +245,22 @@ class min {
 
     }
 
+    /*
+     *
+     *
+     *  Category: Category: 29, 32, 36
+     *
+     *  x'0, x'1, ..., x'n = -x0, -x1, ..., -xn
+     *
+     *  => X' = max(-X)    -->     assumption that max returns a collection of largest value in the collection
+     *                     -->     e.g. X' = max(-[1,2,3]) = [-1]
+     *  Where:
+     *  z'0, z'1, ..., z'n = -z0, -z1, ..., -zn
+     *  => Z' = -Z
+     *
+     *  Therefore: z’ == -z
+     *
+     * */
     @Test
     void metaTwoCategoryThree(){
 
@@ -187,6 +281,7 @@ class min {
 
     }
 
+    // max: {Double} -> {Double}
     private static Set<Double> max(Set<Double> x) {
         Set<Double> temp = new HashSet<Double>();
         temp.add(Collections.max(x));
@@ -194,6 +289,7 @@ class min {
         return temp;
     }
 
+    // max: {Float} -> {Float}
     private static Queue<Float> max(Queue<Float> x) {
         Queue<Float> temp = new PriorityQueue<Float>();
         temp.add(Collections.max(x));
@@ -201,6 +297,7 @@ class min {
         return temp;
     }
 
+    // max: {Integer} -> {Integer}
     private static List<Integer> max(List<Integer> x) {
         List<Integer> temp = new LinkedList<Integer> ();
         temp.add(Collections.max(x));
