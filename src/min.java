@@ -148,7 +148,11 @@ class min {
         for(int c = 0; c < 1000; c++) {
 
             // The number of elements in the set
-            int num = rn.nextInt(10000);
+            // do while loop prevents 0
+            int num = 0;
+            do {
+                num = rn.nextInt(10000);
+            } while(num == 0);
 
             // The number to add to X
             final double N = rn.nextDouble();
@@ -163,7 +167,7 @@ class min {
 
             // see if X' == X + N
             assertEquals(x.stream().map(el -> el + N).collect(Collectors.toCollection(HashSet<Double>::new)), xPrime);
-
+//            System.out.println(x);
             double z = Collections.min(x);
             double zPrime = Collections.min(xPrime);
 

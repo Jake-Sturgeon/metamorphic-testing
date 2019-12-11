@@ -146,13 +146,13 @@ class rotate {
         // Init a new random object
         Random rn = new Random();
 
-        for(int c = 0; c < 2; c++) {
+        for(int c = 0; c < 1000; c++) {
 
             // The number of elements in the LinkedList
 
             // NOTE: Over 100 is considered large in the source code and will cause the rotation method
             // to split the list in 2
-            int num = rn.nextInt(10000);
+            int num = rn.nextInt(100000);
 
             // Pick a random distance to rotate the list. Range is all possible integers
             int d = rn.nextInt();
