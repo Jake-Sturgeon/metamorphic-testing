@@ -62,12 +62,12 @@ class min {
     @Test
     void metaOneCategoryTwo(){
 
-        // X = [0f, 1f, ..., 9999f]
+        // X = [10000f, 9999ff, ..., 1f]
         Queue<Float> x = new PriorityQueue<Float>();
-        for(float i = 0; i < 10000; i++)
+        for(float i = 10000; i > 0; i--)
             x.add(i);
 
-        // X' = [0f + 1, 1f + 1, ..., 9999f + 1]
+        // X' = [10000f + 1, 9999ff + 1, ..., 1f + 1]
         Queue<Float> xPrime = x.stream().map(el -> el + 1f ).collect(Collectors.toCollection(PriorityQueue<Float>::new));
 
         // see if X' = X + 1 holds
@@ -124,6 +124,9 @@ class min {
      *  ====== Automated Test ======
      *
      *  Category: 29, 32, 36
+     *
+     *  N => Random
+     *  X => List of Doubles of a Random size
      *
      *  x'0, x'1, ..., x'n = x0 + N, x + N, ..., xn + N
      *  => X' = X + N
@@ -226,9 +229,9 @@ class min {
     @Test
     void metaTwoCategoryTwo(){
 
-        //X = [0f, 1f, ..., 9999f]
+        // X' = [10000f, 9999ff, ..., 1f]
         Queue<Float> x = new PriorityQueue<Float>();
-        for(float i = 0; i < 10000; i++)
+        for(float i = 10000; i > 0; i--)
             x.add(i);
 
         // X' = max(-X)

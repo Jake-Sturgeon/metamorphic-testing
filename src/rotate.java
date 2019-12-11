@@ -30,7 +30,7 @@ class rotate {
 
         //d = 0
         int d = -0;
-        // d' = 0 + 0
+        // d' = -0 + 0
         int dPrime = d + x.size();
 
         //Implicit assumption the z = Collections.rotate(x,d) due to inplace operations
@@ -131,6 +131,8 @@ class rotate {
      *
      *  Category: 11, 14, 17, 19, 22
      *
+     *  d => random int
+     *  X => random sized list
      *
      *  d’ = d + length( X )
      *  So: z = Collection.min(x, d), z = Collection.min(x, d’)
