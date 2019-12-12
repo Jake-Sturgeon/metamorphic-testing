@@ -242,7 +242,6 @@ class min {
         Queue<Float> xPrime = x.stream().map(el -> -el).collect(Collectors.toCollection(PriorityQueue::new));
         xPrime = max(xPrime);
 
-
         float z = Collections.min(x);
         float zPrime = Collections.min(xPrime);
 
@@ -290,25 +289,79 @@ class min {
 
     // max: {Double} -> {Double}
     private static Set<Double> max(Set<Double> x) {
-        Set<Double> temp = new HashSet<Double>();
-        temp.add(Collections.max(x));
+        // If the list is empty or has one element
+        // then just return the original list
+        if (x.size() <= 1)
+            return x;
 
+        //init temp collection and iterator
+        Set<Double> temp = new HashSet<Double>();
+        Iterator<Double> i = x.iterator();
+
+        //find max value in the collection
+        double max = -Double.MAX_VALUE;
+        while(i.hasNext()) {
+            double n = i.next();
+            if(n > max) {
+                max = n;
+            }
+        }
+
+        //return a collection of the max value
+        temp.add(max);
         return temp;
     }
 
-    // max: {Float} -> {Float}
+    // max: [Float] -> [Float]
     private static Queue<Float> max(Queue<Float> x) {
-        Queue<Float> temp = new PriorityQueue<Float>();
-        temp.add(Collections.max(x));
+        // If the list is empty or has one element
+        // then just return the original list
+        if (x.size() <= 1)
+            return x;
 
+        //init temp collection and iterator
+        Queue<Float> temp = new PriorityQueue<Float>();
+        Iterator<Float> i = x.iterator();
+
+        //find max value in the collection
+        float max = -Float.MAX_VALUE;
+        while(i.hasNext()) {
+            float n = i.next();
+            if(n > max) {
+                max = n;
+            }
+        }
+
+        //return a collection of the max value
+        temp.add(max);
         return temp;
     }
 
     // max: {Integer} -> {Integer}
     private static List<Integer> max(List<Integer> x) {
-        List<Integer> temp = new LinkedList<Integer> ();
-        temp.add(Collections.max(x));
+//        List<Integer> temp = new LinkedList<Integer> ();
+//        temp.add(Collections.max(x));
 
+        // If the list is empty or has one element
+        // then just return the original list
+        if (x.size() <= 1)
+            return x;
+
+        //init temp collection and iterator
+        List<Integer> temp = new LinkedList<Integer>();
+        Iterator<Integer> i = x.iterator();
+
+        //find max value in the collection
+        int max = Integer.MIN_VALUE;
+        while(i.hasNext()) {
+            int n = i.next();
+            if(n > max) {
+                max = n;
+            }
+        }
+
+        //return a collection of the max value
+        temp.add(max);
         return temp;
     }
 
