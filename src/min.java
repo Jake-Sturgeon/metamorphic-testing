@@ -203,7 +203,7 @@ class min {
 
         // X' = max(-X)
         List<Integer> xPrime = x.stream().map(el -> -el).collect(Collectors.toCollection(LinkedList::new));
-        xPrime = max(xPrime);
+        xPrime = max(xPrime);   //Testing assumption 
 
 
         int z = Collections.min(x);
@@ -240,7 +240,7 @@ class min {
 
         // X' = max(-X)
         Queue<Float> xPrime = x.stream().map(el -> -el).collect(Collectors.toCollection(PriorityQueue::new));
-        xPrime = max(xPrime);
+        xPrime = max(xPrime);   //Testing assumption
 
         float z = Collections.min(x);
         float zPrime = Collections.min(xPrime);
@@ -258,7 +258,7 @@ class min {
      *
      *  x'0, x'1, ..., x'n = -x0, -x1, ..., -xn
      *
-     *  => X' = max(-X)    -->     assumption that max returns a collection of largest value in the collection
+     *  => X' = max(-X)    -->     Testing assumption  that max returns a collection of largest value in the collection
      *                     -->     e.g. X' = max(-[1,2,3]) = [-1]
      *  Where:
      *  z'0, z'1, ..., z'n = -z0, -z1, ..., -zn
@@ -277,7 +277,7 @@ class min {
 
         // X' = max(-X)
         Set<Double> xPrime = x.stream().map(el -> -el).collect(Collectors.toCollection(HashSet::new));
-        xPrime = max(xPrime);
+        xPrime = max(xPrime);   //Testing assumption
 
         double z = Collections.min(x);
         double zPrime = Collections.min(xPrime);
@@ -339,8 +339,6 @@ class min {
 
     // max: {Integer} -> {Integer}
     private static List<Integer> max(List<Integer> x) {
-//        List<Integer> temp = new LinkedList<Integer> ();
-//        temp.add(Collections.max(x));
 
         // If the list is empty or has one element
         // then just return the original list

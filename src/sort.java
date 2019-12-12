@@ -150,9 +150,7 @@ class sort {
 
 
         // See if X' == X + 1
-        assertIterableEquals(
-                x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Integer>::new)),
-                xPrime);
+        assertIterableEquals(x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Integer>::new)), xPrime);
 
         //Implicit assumption the z = Collections.sort(x) due to inplace operations
         Collections.sort(x);
@@ -160,9 +158,7 @@ class sort {
         Collections.sort(xPrime);
 
         // See if Z' == Z + 1 now holds
-        assertIterableEquals(
-                x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Integer>::new)),
-                xPrime);
+        assertIterableEquals(x.stream().map(el -> el + 1 ).collect(Collectors.toCollection(ArrayList<Integer>::new)), xPrime);
 
     }
 
