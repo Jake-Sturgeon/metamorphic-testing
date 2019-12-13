@@ -8,7 +8,6 @@ import static org.junit.jupiter.api.Assertions.*;
 class rotate {
 
     /*
-    *
     *  Category: 10, 12, 15, 19, 23
     *
     *
