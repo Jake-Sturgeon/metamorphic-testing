@@ -185,7 +185,7 @@ class min {
      *
      *  x'0, x'1, ..., x'n = -x0, -x1, ..., -xn
      *
-     *  => X' = max(-X)    -->     assumption that max returns a collection of largest value in the collection
+     *  => X' = max(-X)    -->     Testing assumption that max returns a collection of largest value in the collection
      *                     -->     e.g. X' = max(-[1,2,3]) = [-1]
      *  Where:
      *  z'0, z'1, ..., z'n = -z0, -z1, ..., -zn
@@ -203,7 +203,7 @@ class min {
 
         // X' = max(-X)
         List<Integer> xPrime = x.stream().map(el -> -el).collect(Collectors.toCollection(LinkedList::new));
-        xPrime = max(xPrime);   //Testing assumption 
+        xPrime = max(xPrime);   //Testing assumption
 
 
         int z = Collections.min(x);
@@ -221,7 +221,7 @@ class min {
      *
      *  x'0, x'1, ..., x'n = -x0, -x1, ..., -xn
      *
-     *  => X' = max(-X)    -->     assumption that max returns a collection of largest value in the collection
+     *  => X' = max(-X)    -->     Testing assumption that max returns a collection of largest value in the collection
      *                     -->     e.g. X' = max(-[1,2,3]) = [-1]
      *  Where:
      *  z'0, z'1, ..., z'n = -z0, -z1, ..., -zn
