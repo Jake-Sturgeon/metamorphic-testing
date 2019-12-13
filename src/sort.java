@@ -165,7 +165,7 @@ class sort {
     /*
      *
      *  ===========NOTE: THIS WILL NOT WORK DUE TO CATEGORY 5 USING STRINGS=================
-     *
+     *  = This relation is type specific.
      *  = However, concatenating an "a" could be treated as the same operation?
      *  = So was implemented but commented out
      *
